@@ -81,10 +81,10 @@ source 'https://rubygems.org'
 
 # See instructions in Gemfile.rails_next
 def rails_upgrade?
-  true
+  %w[1 true].include?(ENV['RAILS_UPGRADE'])
 end
 
-gem 'rails', '~> 6.1.4'
+gem 'rails', rails_upgrade? ? '~> 7.0.2' : '~> 6.1.4'
 
 gem 'pg', '~> 1.2.3'
 
@@ -119,7 +119,7 @@ gem 'ruby-msg', '~> 1.5.0', :git => 'https://github.com/mysociety/ruby-msg.git',
 gem 'rubyzip', '~> 2.3.2'
 gem 'secure_headers', '~> 6.3.3'
 gem 'statistics2', '~> 0.54'
-gem 'strip_attributes', :git => 'https://github.com/mysociety/strip_attributes.git', :branch => 'globalize3-rails5.2'
+gem 'strip_attributes', :git => 'https://github.com/mysociety/strip_attributes.git', :branch => rails_upgrade? ? 'globalize3-rails7' : 'globalize3-rails5.2'
 gem 'stripe', '~> 5.43.0'
 gem 'syslog_protocol', '~> 0.9.0'
 gem 'thin', '~> 1.8.1'
@@ -138,7 +138,11 @@ gem 'rails-i18n', '~> 7.0.1'
 gem 'gettext_i18n_rails', '~> 1.8.1'
   gem 'fast_gettext', '~> 2.2.0'
 gem 'gettext', '~> 3.4.1'
-gem 'globalize', '~> 6.0.0'
+if rails_upgrade?
+  gem 'globalize', :git => 'https://github.com/globalize/globalize'
+else
+  gem 'globalize', '~> 6.0.0'
+end
 gem 'locale', '~> 2.1.3'
 gem 'routing-filter', '~> 0.7.0'
 gem 'unicode', '~> 0.4.4'
@@ -174,7 +178,6 @@ group :test do
 end
 
 group :test, :development do
-  gem 'bullet', '~> 7.0.1'
   gem 'factory_bot_rails', '~> 6.2.0'
   gem 'oink', '~> 0.10.1'
   gem 'rspec-activemodel-mocks', '~> 1.1.0'
@@ -185,6 +188,7 @@ end
 
 group :development do
   gem 'annotate', '< 3.2.1'
+  gem 'bullet', '~> 7.0.1'
   gem 'capistrano', '~> 2.15.0', '< 3.0.0'
     gem 'net-ssh', '~> 6.1.0'
       gem 'net-ssh-gateway', '>= 1.1.0', '< 3.0.0'
