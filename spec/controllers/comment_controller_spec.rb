@@ -126,7 +126,7 @@ RSpec.describe CommentController, "when commenting on a request" do
   end
 
   it 'errors if the same comment is submitted twice' do
-    user = User.build(:user)
+    user = FactoryBot.build(:user)
     info_request = FactoryBot.build(:info_request, user: user)
     comment =
       FactoryBot.create(:comment, info_request: info_request, user: user)
@@ -190,7 +190,7 @@ RSpec.describe CommentController, "when commenting on a request" do
   end
 
   it 'does not allow comments from banned users' do
-    sign_in User.create(:user, :banned)
+    sign_in FactoryBot.create(:user, :banned)
 
     post :new, params: { url_title: FactoryBot.create(:info_request).url_title,
                          comment: { body: 'Comment will be rejected' },
