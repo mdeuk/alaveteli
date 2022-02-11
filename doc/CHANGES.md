@@ -2,6 +2,7 @@
 
 ## Highlighted Features
 
+* Show who made each edit on public body admin pages (Gareth Rees)
 * Add support `ActiveStorage` for raw emails (Graeme Porteous)
 * Add canned censor rule replacement reasons (Gareth Rees)
 * Localise stripping of salutations (Gareth Rees)
