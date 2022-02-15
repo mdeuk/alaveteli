@@ -12,7 +12,7 @@ RSpec.describe AttachmentToHTML::View do
   let(:view) { AttachmentToHTML::View.new(adapter) }
 
   let(:default_template) do
-    "#{ Rails.root }/lib/attachment_to_html/template.html.erb"
+    "#{Rails.root}/lib/attachment_to_html/attachment_to_html/template.html.erb"
   end
 
   describe '.template' do
