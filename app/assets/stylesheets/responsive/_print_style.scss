@@ -15,7 +15,6 @@ body,
 }
 
 // hide things we don't need
-.admin,
 .ms-header,
 #topnav,
 .rsp_menu_button,
@@ -39,7 +38,9 @@ body,
 #user_profile_search form,
 #user_not_logged_in,
 .request-header__toolbar-actions,
-.correspondence__footer  {
+.correspondence__footer,
+#admin-navbar,
+.admin-footer {
     display: none !important;
 }
 
@@ -215,4 +216,9 @@ p.subtitle {
 
 .bodies-list strong a {
     display: none;
+}
+
+//Open the accordions when printing
+.accordion-body.collapse {
+    height: auto !important;
 }
