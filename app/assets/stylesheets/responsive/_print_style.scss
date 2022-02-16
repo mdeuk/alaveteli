@@ -222,3 +222,37 @@ p.subtitle {
 .accordion-body.collapse {
     height: auto !important;
 }
+
+// Tables styling
+table {
+    page-break-after: auto;
+    border: 1px solid #d1d1d1;
+    border-collapse: collapse;
+  }
+
+  tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+    -webkit-print-color-adjust: exact; 
+    &:nth-child(odd) {
+        background-color: #f9f9f9;
+    }
+    &:last-child {
+        border-bottom: none;
+    }
+  }
+
+  td {
+    padding: 4px 5px;
+    page-break-inside: avoid;
+    page-break-after: auto;
+    border-bottom: 1px solid #d1d1d1;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tfoot {
+    display: table-footer-group;
+  }
