@@ -2,6 +2,10 @@ body {
     font-size: 10pt;
 }
 
+@page {
+    margin: 2cm;
+}
+
 body,
 #wrapper,
 #banner_content,
@@ -255,4 +259,16 @@ thead {
 
 tfoot {
     display: table-footer-group;
+}
+
+// This should make the <hr> elements more subtle
+.admin hr {
+    border-top: 1px solid #eee;
+    page-break-after: auto;
+    margin: 20px 0;
+}
+
+// This will avoid fieldset element to have a page-break.
+fieldset {
+    page-break-inside: avoid;
 }
