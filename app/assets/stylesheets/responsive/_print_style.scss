@@ -48,7 +48,9 @@ body,
 #admin-navbar,
 .admin-footer,
 .btn,
-fieldset {
+fieldset,
+input.search-query,
+.btn-help-text {
     display: none !important;
 }
 
@@ -244,6 +246,7 @@ table {
     page-break-after: auto;
     border: 1px solid #d1d1d1;
     border-collapse: collapse;
+    margin-bottom: 20px;
 }
 
 tr {
