@@ -1,5 +1,6 @@
 body {
     font-size: 10pt;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
 @page {
@@ -68,6 +69,10 @@ fieldset {
 
 h1, h2, h3 {
     page-break-after: avoid;
+}
+
+a {
+    color: #08c !important;
 }
 
 img {
