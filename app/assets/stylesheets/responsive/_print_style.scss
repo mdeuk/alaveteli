@@ -44,7 +44,9 @@ body,
 .request-header__toolbar-actions,
 .correspondence__footer,
 #admin-navbar,
-.admin-footer {
+.admin-footer,
+.btn,
+fieldset {
     display: none !important;
 }
 
