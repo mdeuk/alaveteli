@@ -51,7 +51,8 @@ body,
 fieldset,
 input.search-query,
 .btn-help-text,
-.role-filter {
+.role-filter,
+#mass_add_tag_new_tag_substring {
     display: none !important;
 }
 
@@ -300,7 +301,7 @@ blockquote {
 }
 
 //Users page for admin
-#requests {
+#requests, #bodies {
     .accordion-heading {
         width: 10cm !important;
         font-weight: 600;
