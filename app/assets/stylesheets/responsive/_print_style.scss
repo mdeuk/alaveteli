@@ -3,7 +3,8 @@ body {
 }
 
 @page {
-    margin: 2cm;
+    margin-top: 2cm;
+    margin-bottom: 2cm;
 }
 
 body,
@@ -229,6 +230,10 @@ p.subtitle {
     height: auto !important;
 }
 
+.accordion-heading {
+    padding-bottom: 15px;
+}
+
 // Tables styling
 table {
     page-break-after: auto;
@@ -275,4 +280,12 @@ tfoot {
 // we decide to make the elemnets visible again. 
 fieldset {
     page-break-inside: avoid;
+}
+
+blockquote {
+    margin-block-start: 10px;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    font-weight: 600;
 }
