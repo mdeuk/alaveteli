@@ -231,7 +231,7 @@ p.subtitle {
 }
 
 .accordion-heading {
-    padding-bottom: 15px;
+    padding-bottom: 15px !important;
 }
 
 // Tables styling
@@ -288,4 +288,36 @@ blockquote {
     margin-inline-start: 0;
     margin-inline-end: 0;
     font-weight: 600;
+}
+
+//Users page for admin
+#requests {
+    .accordion-heading {
+        width: 10cm !important;
+        font-weight: 600;
+    }
+
+    .item-detail.accordion-body.row {
+        width: 10cm !important;
+        border: 1px solid #d1d1d1;
+        margin-bottom: 25px !important;
+
+        div {
+            border-bottom: 1px solid #d1d1d1;
+            padding: 4px 5px;
+            .span6 {
+                &:first-child {
+                    margin-right: 5px;
+                }
+            }
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    
+        div:nth-child(odd) {
+            -webkit-print-color-adjust: exact;
+            background-color: #eee;
+        }
+    }
 }
